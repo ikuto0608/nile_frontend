@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 class CustomerCard extends Component {
-  constructor(props){
-    super(props);
-  }
 
   render() {
     const { username, rating, wantFrom, deliverTo, deliverBy, product, price } = this.props;

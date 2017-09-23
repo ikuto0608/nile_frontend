@@ -31,7 +31,6 @@ const testData = [{
   price: '< $20 CAD'
 }];
 
-
 class TravellerContainer extends Component {
   constructor(props){
     super(props)
@@ -41,7 +40,6 @@ class TravellerContainer extends Component {
   }
 
   render() {
-
     const travellerCards = testData.map((traveller, i) => {
       return (
         <TravellerCard
@@ -55,6 +53,7 @@ class TravellerContainer extends Component {
         />
       )
     })
+
     return (
       <div style={{ display: 'flex', flexDirection: 'column', width: '1400px', paddingLeft: '3em', paddingTop: '2em', justifyContent: 'space-around' }}>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>

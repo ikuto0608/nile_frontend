@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 class TravellerCard extends Component {
-  constructor(props){
-    super(props);
-  }
 
   render() {
     const { username, rating, comingFrom, goingTo, arriving, price } = this.props;
