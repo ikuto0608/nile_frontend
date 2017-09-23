@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Home from './Home/Home.jsx';
 import CustomerPost from './CustomerPost/CustomerPost.jsx';
+import SearchContainer from './SearchResults/SearchContainer.jsx';
 
 class Main extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Main extends Component {
       source: '',
       destination: ''
     }
+    this.getSearchResults = this.getSearchResults.bind(this);
   }
 
   getSearchResults(userType, source, destination) {

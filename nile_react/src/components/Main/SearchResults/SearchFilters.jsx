@@ -66,31 +66,35 @@ class SearchFilters extends Component {
 
     if (this.props.userType === 'customer') {
       inputFields = (
-        <label for="usertype">I am a:</label>
-        <input type="select" name="usertype" id="usertype" value={this.props.userType} />
-          <option value="traveller">Traveller</option>
-          <option value="customer">Customer</option>
-        </input>
-        <label for="want">Want something from:</label>
-        <input type="text" name="want" id="want" value={this.props.source} ref={(source) => this.source = source} />
-        <label for="delivered">Delivered to:</label>
-        <input type="text" name="delivered" id="delivered" value={this.props.destination} ref={(destination) => this.destination = destination} />
-        <label for="deadline">Deadline:</label>
-        <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} />
+        <div>
+          <label for="usertype">I am a:</label>
+          <select name="usertype" id="usertype" defaultValue={this.props.userType}>
+            <option value="traveller">Traveller</option>
+            <option value="customer">Customer</option>
+          </select>
+          <label for="want">Want something from:</label>
+          <input type="text" name="want" id="want" defaultValue={this.props.source} ref={(source) => this.source = source} />
+          <label for="delivered">Delivered to:</label>
+          <input type="text" name="delivered" id="delivered" defaultValue={this.props.destination} ref={(destination) => this.destination = destination} />
+          <label for="deadline">Deadline:</label>
+          <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} />
+        </div>
       )
     } else {
       inputFields = (
-        <label for="usertype">I am a:</label>
-        <input type="select" name="usertype" id="usertype" value={this.props.userType} />
-          <option value="traveller">Traveller</option>
-          <option value="customer">Customer</option>
-        </input>
-        <label for="want">Coming from:</label>
-        <input type="text" name="want" id="want" value={this.props.source} ref={(source) => this.source = source} />
-        <label for="delivered">Going to:</label>
-        <input type="text" name="delivered" id="delivered" value={this.props.destination} ref={(destination) => this.destination = destination} />
-        <label for="deadline">Arriving:</label>
-        <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} />
+        <div>
+          <label for="usertype">I am a:</label>
+          <select name="usertype" id="usertype" defaultValue={this.props.userType}>
+            <option value="traveller">Traveller</option>
+            <option value="customer">Customer</option>
+          </select>
+          <label for="want">Coming from:</label>
+          <input type="text" name="want" id="want" defaultValue={this.props.source} ref={(source) => this.source = source} />
+          <label for="delivered">Going to:</label>
+          <input type="text" name="delivered" id="delivered" defaultValue={this.props.destination} ref={(destination) => this.destination = destination} />
+          <label for="deadline">Arriving:</label>
+          <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} />
+        </div>
       )
     }
 
