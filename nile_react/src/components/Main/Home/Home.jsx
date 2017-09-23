@@ -3,10 +3,18 @@ import NileInfo from './NileInfo.jsx';
 import UserFilter from './UserFilter.jsx';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: this.props.currentUser,
+      loggedIn: this.props.loggedIn,
+    }
+  }
+
   render() {
     return (
       <div>
-        <UserFilter />
+        <UserFilter getSearchResults={this.props.getSearchResults} />
         <NileInfo />
       </div>
     );

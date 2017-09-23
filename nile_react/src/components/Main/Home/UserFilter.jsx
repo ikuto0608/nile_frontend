@@ -7,11 +7,20 @@ class UserFilter extends Component {
       userType: 'customer'
     }
     this.updateForm = this.updateForm.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updateForm(event) {
     const userType = event.target.value;
     this.setState({userType: userType});
+    event.preventDefault();
+  }
+
+  handleSubmit(event) {
+    const source = this.source.value;
+    const destination = this.destination.value;
+
+    this.props.getSearchResults(this.state.userType, source, destination);
     event.preventDefault();
   }
 
@@ -25,11 +34,11 @@ class UserFilter extends Component {
         <div>
           <div>
             <span>Want Something From </span>
-            <input type='text' />
+            <input type='text' ref={(source) => this.source = source} />
           </div>
           <div>
-            <span>Live in </span>
-            <input type='text' />
+            <span>Delivered to </span>
+            <input type='text' ref={(destination) => this.destination = destination} />
           </div>
         </div>
       )
@@ -37,30 +46,23 @@ class UserFilter extends Component {
       inputFields = (
         <div>
           <div>
-            <span>Coming From </span>
-            <input type='text' />
+            <span>Travelling From </span>
+            <input type='text' ref={(source) => this.source = source} />
           </div>
           <div>
             <span>Going to </span>
-            <input type='text' />
-          </div>
-          <div>
-            <span>Arriving </span>
-            <input type='text' />
+            <input type='text' ref={(destination) => this.destination = destination} />
           </div>
         </div>
       )
     }
-    
-
-    console.log(inputFields);
 
     return (
       <div>
-        Connecting Travellers and customers across the world
-        <form className='customer-form'>
+        <span>Connecting Travellers and customers across the world</span>
+        <form className='customer-form' onSubmit={this.handleSubmit}>
           <div>
-            I am a 
+            <span>I am a </span>
             <select name='user-type' onChange={this.updateForm}>
               <option value='customer'>Customer</option>
               <option value='traveller'>Traveller</option>
