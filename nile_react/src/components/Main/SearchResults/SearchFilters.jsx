@@ -21,7 +21,7 @@ class SearchFilters extends Component {
         mm = '0' + mm
     }
 
-    dateToday = yyyy + '/' + mm + '/' + dd;
+    let dateToday = yyyy + '/' + mm + '/' + dd;
     return dateToday;
   }
 
@@ -40,8 +40,16 @@ class SearchFilters extends Component {
         mm = '0' + mm
     }
 
-    dateToday = nextYear + '/' + mm + '/' + dd;
+    let dateToday = nextYear + '/' + mm + '/' + dd;
     return dateToday;
+  }
+
+  handleSubmit(event) {
+    const source = this.source.value;
+    const destination = this.destination.value;
+
+    this.props.getSearchResults(this.props.userType, source, destination);
+    event.preventDefault();
   }
 
   render() {
@@ -52,23 +60,44 @@ class SearchFilters extends Component {
       textAlign: "center"
     }
 
+    let inputFields;
     const dateToday = this.todayDate();
     const maxDate = this.maxDate();
 
-    return (
-      <form>
+    if (this.props.userType === 'customer') {
+      inputFields = (
         <label for="usertype">I am a:</label>
-        <input type="select" name="usertype" id="usertype" value="Customer">
-          <option value="traveler">Traveler</option>
+        <input type="select" name="usertype" id="usertype" value={this.props.userType} />
+          <option value="traveller">Traveller</option>
           <option value="customer">Customer</option>
         </input>
         <label for="want">Want something from:</label>
-        <input type="text" name="want" id="want" value="">
+        <input type="text" name="want" id="want" value={this.props.source} ref={(source) => this.source = source} />
         <label for="delivered">Delivered to:</label>
-        <input type="text" name="delivered" id="delivered" value="">
+        <input type="text" name="delivered" id="delivered" value={this.props.destination} ref={(destination) => this.destination = destination} />
         <label for="deadline">Deadline:</label>
-        <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate}>
-        <input type="submit" value="Submit">
+        <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} />
+      )
+    } else {
+      inputFields = (
+        <label for="usertype">I am a:</label>
+        <input type="select" name="usertype" id="usertype" value={this.props.userType} />
+          <option value="traveller">Traveller</option>
+          <option value="customer">Customer</option>
+        </input>
+        <label for="want">Coming from:</label>
+        <input type="text" name="want" id="want" value={this.props.source} ref={(source) => this.source = source} />
+        <label for="delivered">Going to:</label>
+        <input type="text" name="delivered" id="delivered" value={this.props.destination} ref={(destination) => this.destination = destination} />
+        <label for="deadline">Arriving:</label>
+        <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} />
+      )
+    }
+
+    return (
+      <form onSubmit={this.handleSubmit}>
+        {inputFields}
+        <input type="submit" value="Submit" />
       </form>
     )
   }
