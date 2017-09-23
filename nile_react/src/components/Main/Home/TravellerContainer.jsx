@@ -57,7 +57,7 @@ class TravellerContainer extends Component {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', width: '1400px', paddingLeft: '3em', paddingTop: '2em', justifyContent: 'space-around' }}>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-          <h2>Deliverer</h2>
+          <h2>Traveller</h2>
           <a href='#UserFilter'>See All</a>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
