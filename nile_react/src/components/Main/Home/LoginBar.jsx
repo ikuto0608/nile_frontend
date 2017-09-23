@@ -2,9 +2,18 @@ import React, { Component } from 'react';
 
 class LoginBar extends Component {
   render() {
+
+    const style = {
+      margin: "auto",
+      width: "50%",
+      textAlign: "center"
+    }
+
     return (
-      <div>I am a LoginBar.</div>
-    );
+      <div style={style}>
+        <button>Sign up for free</button>
+      </div>
+    )
   }
 }
 
