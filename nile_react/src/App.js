@@ -6,11 +6,21 @@ import Main from './components/Main/Main.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
 class App extends Component {
+    state = {
+      userType: 'customer',
+      loggedIn: false,
+      currentUser: ''
+    }
+  }
   render() {
     return (
       <div>
         <NavBar />
-        <Main />
+        <Main
+          userType={this.state.userType}
+          loggedIn={this.state.loggedIn}
+          currentUser={this.state.currentUser}
+          />
         <Footer />
       </div>
     );
