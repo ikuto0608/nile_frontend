@@ -7,6 +7,7 @@ class UserFilter extends Component {
       userType: 'customer'
     }
     this.updateForm = this.updateForm.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updateForm(event) {
@@ -15,52 +16,56 @@ class UserFilter extends Component {
     event.preventDefault();
   }
 
+  handleSubmit(event) {
+    const source = this.source.value;
+    const destination = this.destination.value;
+
+    this.props.getSearchResults(this.state.userType, source, destination);
+    event.preventDefault();
+  }
+
 
   render() {
 
-    const inputFields = () => {
-      if (this.state.userType === 'customer') {
-        return (
+    let inputFields;
+
+    if (this.state.userType === 'customer') {
+      inputFields = (
+        <div>
           <div>
-            <div>
-              <span>Want Something From </span>
-              <input type='text'>
-            </div>
-            <div>
-              <span>Live in </span>
-              <input type='text'>
-            </div>
+            <span>Want Something From </span>
+            <input type='text' ref={(source) => this.source = source} />
           </div>
-        )
-      } else {
-        return (
           <div>
-            <div>
-              <span>Coming From </span>
-              <input type='text'>
-            </div>
-            <div>
-              <span>Going to </span>
-              <input type='text'>
-            </div>
-            <div>
-              <span>Arriving </span>
-              <input type='text'>
-            </div>
+            <span>Delivered to </span>
+            <input type='text' ref={(destination) => this.destination = destination} />
           </div>
-        )
-      }
+        </div>
+      )
+    } else {
+      inputFields = (
+        <div>
+          <div>
+            <span>Travelling From </span>
+            <input type='text' ref={(source) => this.source = source} />
+          </div>
+          <div>
+            <span>Going to </span>
+            <input type='text' ref={(destination) => this.destination = destination} />
+          </div>
+        </div>
+      )
     }
 
     return (
       <div>
-        Connecting Travellers and customers across the world
-        <form className='customer-form'>
+        <span>Connecting Travellers and customers across the world</span>
+        <form className='customer-form' onSubmit={this.handleSubmit}>
           <div>
-            I am a 
+            <span>I am a </span>
             <select name='user-type' onChange={this.updateForm}>
-              <option value='traveller'>Traveller</option>
               <option value='customer'>Customer</option>
+              <option value='traveller'>Traveller</option>
             </select>
           </div>
           {inputFields}
