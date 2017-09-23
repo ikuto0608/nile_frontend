@@ -6,7 +6,7 @@ class NileInfo extends Component {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        width: '100%',
+        width: '1500px',
         height: '30em',
         backgroundColor: '#d3d3d3',
         justifyContent: 'space-evenly',
