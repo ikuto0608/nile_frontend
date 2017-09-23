@@ -18,39 +18,42 @@ class UserFilter extends Component {
 
   render() {
 
-    const inputFields = () => {
-      if (this.state.userType === 'customer') {
-        return (
+    let inputFields;
+
+    if (this.state.userType === 'customer') {
+      inputFields = (
+        <div>
           <div>
-            <div>
-              <span>Want Something From </span>
-              <input type='text'>
-            </div>
-            <div>
-              <span>Live in </span>
-              <input type='text'>
-            </div>
+            <span>Want Something From </span>
+            <input type='text' />
           </div>
-        )
-      } else {
-        return (
           <div>
-            <div>
-              <span>Coming From </span>
-              <input type='text'>
-            </div>
-            <div>
-              <span>Going to </span>
-              <input type='text'>
-            </div>
-            <div>
-              <span>Arriving </span>
-              <input type='text'>
-            </div>
+            <span>Live in </span>
+            <input type='text' />
           </div>
-        )
-      }
+        </div>
+      )
+    } else {
+      inputFields = (
+        <div>
+          <div>
+            <span>Coming From </span>
+            <input type='text' />
+          </div>
+          <div>
+            <span>Going to </span>
+            <input type='text' />
+          </div>
+          <div>
+            <span>Arriving </span>
+            <input type='text' />
+          </div>
+        </div>
+      )
     }
+    
+
+    console.log(inputFields);
 
     return (
       <div>
@@ -59,8 +62,8 @@ class UserFilter extends Component {
           <div>
             I am a 
             <select name='user-type' onChange={this.updateForm}>
-              <option value='traveller'>Traveller</option>
               <option value='customer'>Customer</option>
+              <option value='traveller'>Traveller</option>
             </select>
           </div>
           {inputFields}
