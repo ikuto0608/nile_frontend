@@ -11,16 +11,16 @@ class OptionsList extends Component {
 
   render() {
     return (
-      <div>
-        <ul>
-          <li>Dashboard</li>
-          <li>Messages</li>
-          <li>Your Posts</li>
-          <li>Profile</li>
-          <li>Account</li>
-          <li>Favorites</li>
+      <aside className="menu">
+        <ul className="menu-list">
+          <li><a>Dashboard</a></li>
+          <li><a>Messages</a></li>
+          <li><a>Your Posts</a></li>
+          <li><a>Profile</a></li>
+          <li><a>Account</a></li>
+          <li><a>Favorites</a></li>
         </ul>
-      </div>
+      </aside>
     );
   }
 }

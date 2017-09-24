@@ -58,21 +58,36 @@ class UserFilter extends Component {
     }
 
     return (
-      <div>
-        <span>Connecting Travellers and customers across the world</span>
-        <form className='customer-form' onSubmit={this.handleSubmit}>
-          <div>
-            <span>I am a </span>
-            <select name='user-type' onChange={this.updateForm}>
-              <option value='customer'>Customer</option>
-              <option value='traveller'>Traveller</option>
-            </select>
+      <div className="hero home-background is-large">
+        <div className="hero-body">
+          <div className="columns">
+            <div className="column is-5 home-background-fade">
+              <div className="columns">
+                <form className='customer-form' onSubmit={this.handleSubmit}>
+                  <div className="column is-half">
+                    <div>
+                      <span>I am a </span>
+                      <select name='user-type' onChange={this.updateForm}>
+                        <option value='customer'>Customer</option>
+                        <option value='traveller'>Traveller</option>
+                      </select>
+                    </div>
+                    {inputFields}
+                  </div>
+                  <div className="column is-half">
+                    <div>
+                      <input type='submit' value='Search' />
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </div> 
+            // <div className="column is-7 home-background-header">
+            // </div>
           </div>
-          {inputFields}
-          <div>
-            <input type='submit' value='Search' />
-          </div>
-        </form>
+              <span className="home-background-header">Connecting Travellers and customers across the world</span>
+        </div>
       </div>
     );
 

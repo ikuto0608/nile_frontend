@@ -3,43 +3,18 @@ import React, { Component } from 'react';
 class NileInfo extends Component {
   render() {
     return (
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        width: '1500px',
-        height: '30em',
-        backgroundColor: '#d3d3d3',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-        color: 'white'
-      }}>
-        <div>
-          <h1>How It Works:</h1>
-        </div>
-        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', width: '100%'}}>
-          <div style={{display: 'flex', flexDirection: 'column' }}>
-            <div style={{ height: '15em', width: '15em', backgroundColor: '#FEFEFE', borderRadius: '50%'}}>
-            </div>
-            <div style={{width: '15em'}}>
-              <p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p>
-            </div>
-          </div>
-          <div style={{display: 'flex', flexDirection: 'column' }}>
-            <div style={{ height: '15em', width: '15em', backgroundColor: '#FEFEFE', borderRadius: '50%'}}>
-            </div>
-            <div style={{width: '15em'}}>
-              <p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p>
-            </div>
-          </div>
-          <div style={{display: 'flex', flexDirection: 'column' }}>
-            <div style={{ height: '15em', width: '15em', backgroundColor: '#FEFEFE', borderRadius: '50%'}}>
-            </div>
-            <div style={{width: '15em'}}>
-              <p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah </p>
-            </div>
+      <section className="hero is-info is-large">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">
+              Large title
+            </h1>
+            <h2 className="subtitle">
+              Large subtitle
+            </h2>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
