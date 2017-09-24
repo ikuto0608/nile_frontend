@@ -5,7 +5,14 @@ class Overlay extends Component {
   render() {
 
     return (
-<div className="box" style={{ backgroundColor: 'white', zIndex: 100, position: 'fixed', visibility: this.props.visibility }}>
+<div className="box" style={{ left: '3em',
+boxShadow: '-10px 10px 5px #888888',
+borderStyle: 'solid',
+borderColor: '#d3d3d3',
+backgroundColor: 'white',
+zIndex: 100,
+position: 'fixed',
+visibility: this.props.visibility }}>
   <div style={{textAlign: 'right'}}>
     <button onClick={this.props.showOverlay}>X</button>
   </div>
