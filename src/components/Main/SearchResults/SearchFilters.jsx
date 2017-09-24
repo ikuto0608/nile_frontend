@@ -123,7 +123,7 @@ class SearchFilters extends Component {
           <div className="field-body">
             <div className="field">
               <div className="control">
-                <input className="input" type="text" placeholder="I want something from" ref={(source) => this.source = source}/>
+                <input className="input" type="text" placeholder="I want something from" defaultValue={this.props.source} ref={(source) => this.source = source}/>
               </div>
             </div>
           </div>
@@ -133,7 +133,17 @@ class SearchFilters extends Component {
           <div className="field-body">
             <div className="field">
               <div className="control">
-                <input className="input" type="text" placeholder="Delivered to" ref={(destination) => this.destination = destination}/>
+                <input className="input" type="text" placeholder="Delivered to" defaultValue={this.props.destination} ref={(destination) => this.destination = destination}/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="field is-horizontal">
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input className='input' id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} ref={(deadline) => this.deadline = deadline } />
               </div>
             </div>
           </div>

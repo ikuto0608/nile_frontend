@@ -3,18 +3,19 @@ import React, { Component } from 'react';
 class TravellerCard extends Component {
 
   render() {
+    console.log(this.props)
     const { username, rating, comingFrom, goingTo, arriving} = this.props;
     return (
       <article className="media">
         <figure className="media-left">
           <p className="image is-128x128">
-            <img src="http://fillmurray.com/200/200" />
+            <img src="http://fillmurray.com/200/200" onClick={this.props.handleOrderClick}/>
           </p>
         </figure>
         <div className="media-content">
           <div className="content">
             <p>
-              <strong>Alexander Xavier</strong>
+              <strong>{username}</strong>
               <br/>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
             </p>
