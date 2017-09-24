@@ -66,7 +66,6 @@ class Main extends Component {
         return (
           <CustomerProfile CustomerProfileInfo={null} />
           );      // case 'Profile':
-        );
         break;
 
       case 'Dashboard':
