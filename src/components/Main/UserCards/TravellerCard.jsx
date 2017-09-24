@@ -20,7 +20,7 @@ class TravellerCard extends Component {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
             </p>
           </div>
-         
+
         </div>
       </article>
       // <div style={{width: '40em', height: '15em', borderStyle: 'solid', marginBottom: '4em', padding: '1em'}}>
