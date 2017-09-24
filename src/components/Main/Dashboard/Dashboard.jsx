@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import UserSelect from 'UserSelect.jsx';
-import OptionsList from 'OptionsList.jsx';
+import UserSelect from './UserSelect.jsx';
+import OptionsList from './OptionsList.jsx';
+import MainBody from './Body/MainBody.jsx';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -13,9 +14,16 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <UserSelect />
-        <OptionsList />
+        <div className="columns">
+          <div className="column is-one-quarter">
+            <OptionsList />
+          </div>
+          <div className="column">
+            <MainBody />
+          </div>
+        </div>
       </div>
     );
   }

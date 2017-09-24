@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './Home/Home.jsx';
 import CustomerPost from './CustomerPost/CustomerPost.jsx';
 import SearchContainer from './SearchResults/SearchContainer.jsx';
+import Dashboard from './Dashboard/Dashboard.jsx';
 
 class Main extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class Main extends Component {
       currentUser: this.props.currentUser,
       loggedIn: this.props.loggedIn,
       userType: '',
-      currentPage: 'Home',
+      currentPage: 'Dashboard',
       source: '',
       destination: ''
     }
@@ -35,10 +36,17 @@ class Main extends Component {
         return (
           <SearchContainer userType={userType} source={source} destination={destination} />
         );
+        break;
 
       case 'CustomerPost':
         return (
           <CustomerPost customerPostInfo={testData.customerPostInfo}/>
+        )
+        break;
+
+      case 'Dashboard':
+        return (
+          <Dashboard />
         )
         break;
       // case 'Profile':

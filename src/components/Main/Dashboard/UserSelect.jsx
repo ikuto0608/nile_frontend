@@ -11,12 +11,12 @@ class UserSelect extends Component {
 
   render() {
     return (
-      <nav>
-        <ul>
-          <li>Traveller</li>
-          <li>Customer</li>
-        </ul>
-      </nav>
+      <div className="select">
+        <select>
+          <option>Customer</option>
+          <option>Traveller</option>
+        </select>
+      </div>
     );
   }
 }

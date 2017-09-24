@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 class NavBar extends Component {
   render() {
     return (
-      <div>I am a nav bar.</div>
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          
+        </div>
+      </nav>
     );
   }
 }
