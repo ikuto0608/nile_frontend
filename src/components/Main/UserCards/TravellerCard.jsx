@@ -30,7 +30,6 @@ class TravellerCard extends Component {
       //  <p>Arriving: {arriving}</p>
       //  <p>Price: {price}</p>
       // </div>
-
     );
   }
 }

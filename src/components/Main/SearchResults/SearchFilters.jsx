@@ -46,13 +46,13 @@ class SearchFilters extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     const source = this.source.value;
     const destination = this.destination.value;
     const deadline = this.deadline.value;
     this.props.getResultsForBuyers();
     this.props.deadline(deadline);
     this.props.getSearchResults(this.props.userType, source, destination);
-    event.preventDefault();
   }
 
   render() {
@@ -102,10 +102,51 @@ class SearchFilters extends Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        {inputFields}
-        <input type="submit" value="Submit" />
+      <div className='container'>
+        <form className='customer-form' onSubmit={this.handleSubmit}>
+          <div className="column is-7">
+            <div className="field is-horizontal">
+              <div className="field-body">
+              <div className="field">
+                <div className="control">
+                  <select className="select" name='user-type' onChange={this.updateForm}>
+                    <option value='customer'>Customer</option>
+                    <option value='traveller'>Traveller</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="field is-horizontal">
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input className="input" type="text" placeholder="I want something from" ref={(source) => this.source = source}/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="field is-horizontal">
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input className="input" type="text" placeholder="Delivered to" ref={(destination) => this.destination = destination}/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          
+        <div className="column is-half">
+          <div>
+            <input className='button' type='submit' value='Search' />
+          </div>
+        </div>
       </form>
+    </div>
     )
   }
 }

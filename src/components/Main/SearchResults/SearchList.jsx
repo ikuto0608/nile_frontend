@@ -10,10 +10,10 @@ class SearchList extends Component {
   render() {
 
     const buyersList = this.props.buyers.filter((buyer) => {
-      let deadline = new Date(this.props.deadline);
-      let date_test = new Date(buyer.user_locations[0].end_time)
+      let deadline = new Date("2017-09-26");
+      let date_test = new Date("2017-09-26");
       return date_test <= deadline }).map((buyer, i) => {
-      var date_test = new Date(buyer.user_locations[0].end_time)
+      var date_test = new Date("2017-09-26");
       var formatted_date = (Number(date_test.getMonth()) + 1) + '/' + date_test.getDate() + '/' + date_test.getFullYear();
       return (
           <TravellerCard

@@ -63,7 +63,9 @@ class UserFilter extends Component {
           <div className="hero-body home-background-fade">
             <div className='columns '>
               <div className="column is-1"></div>
-              <span className="home-background-header">Connecting Travellers and customers across the world</span>
+              <div className="column is-8">
+                <span className="home-background-header">Connecting Travellers and customers across the world</span>
+              </div>
             </div>
             <div className="columns">
               <div className="column is-1"></div>
@@ -75,7 +77,7 @@ class UserFilter extends Component {
                         <div className="field-body">
                         <div className="field">
                           <div className="control">
-                            <select name='user-type' onChange={this.updateForm}>
+                            <select className="select" name='user-type' onChange={this.updateForm}>
                               <option value='customer'>Customer</option>
                               <option value='traveller'>Traveller</option>
                             </select>
@@ -108,7 +110,7 @@ class UserFilter extends Component {
                       
                     <div className="column is-half">
                       <div>
-                        <input type='submit' value='Search' />
+                        <input className='button' type='submit' value='Search' />
                       </div>
                     </div>
                   </form>

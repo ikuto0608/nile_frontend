@@ -47,7 +47,7 @@ class Main extends Component {
 
       case 'SearchContainer':
         return (
-          <SearchContainer handleOrderClick={this.handleOrderClick} userType={userType} source={source} destination={destination} />
+          <SearchContainer handleOrderClick={this.handleOrderClick} getSearchResults={this.getSearchResults} userType={userType} source={source} destination={destination} />
         );
         break;
 
@@ -66,6 +66,7 @@ class Main extends Component {
         return (
           <CustomerProfile CustomerProfileInfo={null} />
           );      // case 'Profile':
+
         break;
 
       case 'Dashboard':
