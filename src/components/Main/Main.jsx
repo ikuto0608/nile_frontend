@@ -11,7 +11,7 @@ class Main extends Component {
       currentUser: this.props.currentUser,
       loggedIn: this.props.loggedIn,
       userType: '',
-      currentPage: 'Dashboard',
+      currentPage: 'Home',
       source: '',
       destination: ''
     }
