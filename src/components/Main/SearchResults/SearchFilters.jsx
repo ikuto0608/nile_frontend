@@ -46,13 +46,13 @@ class SearchFilters extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     const source = this.source.value;
     const destination = this.destination.value;
     const deadline = this.deadline.value;
     this.props.getResultsForBuyers();
     this.props.deadline(deadline);
     this.props.getSearchResults(this.props.userType, source, destination);
-    event.preventDefault();
   }
 
   render() {
