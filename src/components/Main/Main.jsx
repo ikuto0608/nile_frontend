@@ -3,6 +3,7 @@ import Home from './Home/Home.jsx';
 import CustomerPost from './CustomerPost/CustomerPost.jsx';
 import SearchContainer from './SearchResults/SearchContainer.jsx';
 import TravellerProfile from './Profile/TravellerProfile.jsx';
+import CustomerProfile from './Profile/CustomerProfile.jsx';
 
 class Main extends Component {
   constructor(props) {
@@ -16,6 +17,12 @@ class Main extends Component {
       destination: ''
     }
     this.getSearchResults = this.getSearchResults.bind(this);
+    this.handleOrderClick = this.handleOrderClick.bind(this);
+  }
+
+  handleOrderClick(){
+    console.log('Beep');
+    this.setState({currentPage: 'CustomerPost'})
   }
 
   getSearchResults(userType, source, destination) {
@@ -39,7 +46,7 @@ class Main extends Component {
 
       case 'SearchContainer':
         return (
-          <SearchContainer userType={userType} source={source} destination={destination} />
+          <SearchContainer handleOrderClick={this.handleOrderClick} userType={userType} source={source} destination={destination} />
         );
 
       case 'CustomerPost':
@@ -49,9 +56,13 @@ class Main extends Component {
 
       case 'TravellerProfile':
         return (
-          <TravellerProfile travellerProfileInfo={null} />
+          <TravellerProfile TravellerProfileInfo={null} />
           );
-      // case 'Profile':
+
+      case 'CustomerProfile':
+        return (
+          <CustomerProfile CustomerProfileInfo={null} />
+          );      // case 'Profile':
       //   return (
       //     <Profile />
       //   );

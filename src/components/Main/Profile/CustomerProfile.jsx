@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TravellerProfile extends Component {
+class CustomerProfile extends Component {
   render() {
     return (
       <div style={{ display: 'flex', flexDirection: 'row', flex: '1'}}>
@@ -24,13 +24,13 @@ class TravellerProfile extends Component {
           <h1> Hi I'm Alexander! </h1>
           <p> Vancouver, Canada. Joined August 2015 </p>
           <div style={{ padding: '1em' }}>
-            <p>🚚 40 Deliveries Completed</p>
+            <p>👜 30 Orders Completed</p>
           </div>
           <div style= {{ padding: '1em', display: 'flex', flexWrap: 'wrap'}}>
             <p>Blah blah blah blah. Blah blah blah blah. Blah blah blah blah. Blah blah blah blah. Blah blah blah blah. Blah blah blah blah. </p>
           </div>
           <div>
-            <h2> Review from Customers (38) </h2>
+            <h2> Review from Travellers (38) </h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'row'}}>
             <div style={{borderRadius: '50%', height: '5em', width: '5em', backgroundColor: '#D3D3D3', flexShrink: '0', margin: '1em'}} />
@@ -44,4 +44,4 @@ class TravellerProfile extends Component {
   }
 }
 
-export default TravellerProfile;
+export default CustomerProfile;

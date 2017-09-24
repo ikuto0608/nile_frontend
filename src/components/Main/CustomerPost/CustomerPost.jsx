@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Overlay from './Overlay.jsx';
 
 const testData = {
   userName: 'Matt Willcox',
@@ -12,16 +13,32 @@ const testData = {
 
 class CustomerPost extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      visible: false
+    }
+    this.showOverlay = this.showOverlay.bind(this);
+  }
+
+  showOverlay(e) {
+    this.setState({visible: !this.state.visible})
+    e.preventDefault();
+  }
+
   render() {
+    const visibility = this.state.visible ? 'visible' : 'hidden';
     const {userName, wantFrom, deliverTo, deliverBy, product, message, avatar} = testData;
     return (
+      <div>
+      <Overlay visibility={visibility} showOverlay={this.showOverlay} />
       <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start', paddingLeft: '2em'}}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingRight: '2em'}}>
             <div>
               <img src={avatar} alt='fillmurray' />
             </div>
             <div>
-              <button style={{borderRadius: '10%', margin: '1em'}}>Offer Delivery</button>
+              <button onClick={this.showOverlay} style={{borderRadius: '10%', margin: '1em'}}>Offer Delivery</button>
             </div>
           </div>
         <div style={{ display: 'flex', flexDirection: 'column'}}>
@@ -63,6 +80,7 @@ class CustomerPost extends Component {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 }

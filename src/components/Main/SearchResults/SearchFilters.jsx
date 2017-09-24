@@ -5,6 +5,7 @@ class SearchFilters extends Component {
     super();
     this.todayDate = this.todayDate.bind(this);
     this.maxDate = this.maxDate.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   todayDate () {
@@ -47,7 +48,9 @@ class SearchFilters extends Component {
   handleSubmit(event) {
     const source = this.source.value;
     const destination = this.destination.value;
-
+    const deadline = this.deadline.value;
+    this.props.getResultsForBuyers();
+    this.props.deadline(deadline);
     this.props.getSearchResults(this.props.userType, source, destination);
     event.preventDefault();
   }
@@ -77,7 +80,7 @@ class SearchFilters extends Component {
           <label for="delivered">Delivered to:</label>
           <input type="text" name="delivered" id="delivered" defaultValue={this.props.destination} ref={(destination) => this.destination = destination} />
           <label for="deadline">Deadline:</label>
-          <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} />
+          <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} ref={(deadline) => this.deadline = deadline }/>
         </div>
       )
     } else {
@@ -93,7 +96,7 @@ class SearchFilters extends Component {
           <label for="delivered">Going to:</label>
           <input type="text" name="delivered" id="delivered" defaultValue={this.props.destination} ref={(destination) => this.destination = destination} />
           <label for="deadline">Arriving:</label>
-          <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} />
+          <input id="deadline" name="deadline" type="date" min={dateToday} max={maxDate} ref={(deadline) => this.deadline = deadline } />
         </div>
       )
     }
