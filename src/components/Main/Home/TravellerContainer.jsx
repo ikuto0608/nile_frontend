@@ -42,28 +42,36 @@ class TravellerContainer extends Component {
   render() {
     const travellerCards = testData.map((traveller, i) => {
       return (
-        <TravellerCard
-        key={i}
-        username={traveller.username}
-        rating={traveller.rating}
-        comingFrom={traveller.comingFrom}
-        goingTo={traveller.goingTo}
-        arriving={traveller.arriving}
-        price={traveller.price}
-        />
+        <div className="tile is-parent">
+          <article className="tile is-child box">
+            <TravellerCard
+            key={i}
+            username={traveller.username}
+            rating={traveller.rating}
+            comingFrom={traveller.comingFrom}
+            goingTo={traveller.goingTo}
+            arriving={traveller.arriving}
+            price={traveller.price}
+            />
+          </article>
+        </div>
       )
     })
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', width: '1400px', paddingLeft: '3em', paddingTop: '2em', justifyContent: 'space-around' }}>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-          <h2>Traveller</h2>
-          <a href='#UserFilter'>See All</a>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-          {travellerCards}
-        </div>
+      <div>
+        {travellerCards}
       </div>
+
+      // <div style={{ display: 'flex', flexDirection: 'column', width: '1400px', paddingLeft: '3em', paddingTop: '2em', justifyContent: 'space-around' }}>
+      //   <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+      //     <h2>Traveller</h2>
+      //     <a href='#UserFilter'>See All</a>
+      //   </div>
+      //   <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+      //     {travellerCards}
+      //   </div>
+      // </div>
     );
   }
 }

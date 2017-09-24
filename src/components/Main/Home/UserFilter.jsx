@@ -59,20 +59,65 @@ class UserFilter extends Component {
 
     return (
       <div>
-        <span>Connecting Travellers and customers across the world</span>
-        <form className='customer-form' onSubmit={this.handleSubmit}>
-          <div>
-            <span>I am a </span>
-            <select name='user-type' onChange={this.updateForm}>
-              <option value='customer'>Customer</option>
-              <option value='traveller'>Traveller</option>
-            </select>
+        <div className="hero home-background is-large">
+          <div className="hero-body home-background-fade">
+            <div className='columns '>
+              <div className="column is-1"></div>
+              <span className="home-background-header">Connecting Travellers and customers across the world</span>
+            </div>
+            <div className="columns">
+              <div className="column is-1"></div>
+              <div className="column is-6 ">
+                <div className="columns">
+                  <form className='customer-form' onSubmit={this.handleSubmit}>
+                    <div className="column is-7">
+                      <div className="field is-horizontal">
+                        <div className="field-body">
+                        <div className="field">
+                          <div className="control">
+                            <select name='user-type' onChange={this.updateForm}>
+                              <option value='customer'>Customer</option>
+                              <option value='traveller'>Traveller</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                    <div className="field is-horizontal">
+                      <div className="field-body">
+                        <div className="field">
+                          <div className="control">
+                            <input className="input" type="text" placeholder="I want something from" ref={(source) => this.source = source}/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="field is-horizontal">
+                      <div className="field-body">
+                        <div className="field">
+                          <div className="control">
+                            <input className="input" type="text" placeholder="Delivered to" ref={(destination) => this.destination = destination}/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                      
+                    <div className="column is-half">
+                      <div>
+                        <input type='submit' value='Search' />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+              </div> 
+            </div>
           </div>
-          {inputFields}
-          <div>
-            <input type='submit' value='Search' />
-          </div>
-        </form>
+        </div>
       </div>
     );
 

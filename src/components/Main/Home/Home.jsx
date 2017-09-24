@@ -17,9 +17,6 @@ class Home extends Component {
     return (
       <div>
         <UserFilter getSearchResults={this.props.getSearchResults} />
-        <NileInfo />
-        <TravellerContainer />
-        <CustomerContainer />
       </div>
     );
   }

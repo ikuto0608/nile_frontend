@@ -4,6 +4,7 @@ import CustomerPost from './CustomerPost/CustomerPost.jsx';
 import SearchContainer from './SearchResults/SearchContainer.jsx';
 import TravellerProfile from './Profile/TravellerProfile.jsx';
 import CustomerProfile from './Profile/CustomerProfile.jsx';
+import Dashboard from './Dashboard/Dashboard.jsx';
 
 class Main extends Component {
   constructor(props) {
@@ -48,11 +49,13 @@ class Main extends Component {
         return (
           <SearchContainer handleOrderClick={this.handleOrderClick} userType={userType} source={source} destination={destination} />
         );
+        break;
 
       case 'CustomerPost':
         return (
           <CustomerPost customerPostInfo={testData.customerPostInfo}/>
-        )
+        );
+        break;
 
       case 'TravellerProfile':
         return (
@@ -63,6 +66,15 @@ class Main extends Component {
         return (
           <CustomerProfile CustomerProfileInfo={null} />
           );      // case 'Profile':
+        );
+        break;
+
+      case 'Dashboard':
+        return (
+          <Dashboard />
+        )
+        break;
+      // case 'Profile':
       //   return (
       //     <Profile />
       //   );
