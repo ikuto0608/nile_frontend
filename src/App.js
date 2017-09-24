@@ -23,7 +23,6 @@ class App extends Component {
           loggedIn={this.state.loggedIn}
           currentUser={this.state.currentUser}
           />
-        <Footer />
       </div>
     );
   }

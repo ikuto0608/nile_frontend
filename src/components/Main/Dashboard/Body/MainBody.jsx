@@ -15,8 +15,7 @@ class MainBody extends Component {
     return (
       <div className='content'>
         <h1>Profile</h1>
-          <TravellerCard />
-        <h1>Messages</h1>
+        <TravellerCard />
       </div>
     );
   }
