@@ -3,7 +3,13 @@ import React, { Component } from 'react';
 class Footer extends Component {
   render() {
     return (
-      <div>I am a footer.</div>
+      <footer className="footer">
+        <div className="container">
+          <div className="content has-text-centered">
+            <p>I am a footer</p>
+          </div>
+        </div>
+      </footer>
     );
   }
 }

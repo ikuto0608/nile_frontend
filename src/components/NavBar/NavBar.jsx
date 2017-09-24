@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 class NavBar extends Component {
   render() {
     return (
-      <div style={{ display: 'flex', flexDirection: 'row', flex: '1'}}>
-        <div style={{width: '100%', paddingBottom: '2em'}}>I am a nav bar.</div>
-      </div>
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          
+        </div>
+      </nav>
     );
   }
 }

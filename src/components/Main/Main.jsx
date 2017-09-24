@@ -3,6 +3,7 @@ import Home from './Home/Home.jsx';
 import CustomerPost from './CustomerPost/CustomerPost.jsx';
 import SearchContainer from './SearchResults/SearchContainer.jsx';
 import TravellerProfile from './Profile/TravellerProfile.jsx';
+import Dashboard from './Dashboard/Dashboard.jsx';
 
 class Main extends Component {
   constructor(props) {
@@ -41,16 +42,25 @@ class Main extends Component {
         return (
           <SearchContainer userType={userType} source={source} destination={destination} />
         );
+        break;
 
       case 'CustomerPost':
         return (
           <CustomerPost customerPostInfo={testData.customerPostInfo}/>
-        )
+        );
+        break;
 
       case 'TravellerProfile':
         return (
           <TravellerProfile travellerProfileInfo={null} />
-          );
+        );
+        break;
+
+      case 'Dashboard':
+        return (
+          <Dashboard />
+        )
+        break;
       // case 'Profile':
       //   return (
       //     <Profile />
